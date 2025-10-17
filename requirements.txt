@@ -1,5 +1,0 @@
-google-genai
-streamlit
-numpy
-faiss-cpu
-# Eğer başka kütüphane kullandıysanız (örneğin pypdf) ekleyebilirsiniz
