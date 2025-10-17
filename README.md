@@ -58,7 +58,7 @@ enerji-verimliligi-ai-chatbot/
 
 ---
 
-# 🔧 KURULUM VE ÇALIŞTIRMA ADIMLARI
+# 🔧 Kurulum ve Çalıştırma Adımları
 
 # 1️⃣ Depoyu Klonlayın
 git clone https://github.com/<kullanici-adiniz>/enerji-verimliligi-ai-chatbot.git
@@ -85,6 +85,7 @@ streamlit run app.py
 
 # 🌐 Uygulama genellikle şu adreste açılır:
 # http://localhost:8501
+
 
 
 Chatbot’un Sunduğu Özellikler
