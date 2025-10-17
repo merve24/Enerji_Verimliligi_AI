@@ -1,60 +1,133 @@
-# 🚀 Sürdürülebilir İşletme Enerji Danışmanı RAG Temelli Chatbot'u
+🚀 Sürdürülebilir İşletme Enerji Danışmanı RAG Temelli Chatbot'u
 
-Bu proje, Akbank GenAI Bootcamp kapsamında, işletmelerin ve bireylerin sürdürülebilirlik ve enerji verimliliği konularındaki sorularını hızlı ve doğru bir şekilde yanıtlamak amacıyla geliştirilmiş, RAG (Retrieval Augmented Generation) mimarisine dayalı bir yapay zeka sohbet robotudur.
+Bu proje, Akbank GenAI Bootcamp kapsamında, işletmelerin ve bireylerin sürdürülebilirlik ve enerji verimliliği konularındaki sorularını hızlı ve doğru bir şekilde yanıtlamak amacıyla geliştirilmiş, Retrieval-Augmented Generation (RAG) mimarisine dayalı bir yapay zeka sohbet robotudur.
 
-## 1. Projenin Amacı
+🌟 Ana Özellikler ve Kullanım Senaryoları
 
-Projenin temel amacı, karmaşık ve teknik bilgi içeren bir eğitim dokümanını (Enerji Verimliliği Kitabı) temel alarak, bu bilgileri kullanıcı dostu ve etkileşimli bir arayüz aracılığıyla sunmaktır.
+Bu chatbot, enerji verimliliği alanındaki karmaşık teknik bilgilere hızlı, güvenilir ve etkileşimli erişim sağlar.
 
-* **Temel Hedef:** Kullanıcının doğal dilde sorduğu sorulara, enerji verimliliği dokümanındaki en alakalı kısımları (kaynakları) referans göstererek bağlamsal ve doğru cevaplar üretmek.
-* **Katkı:** Sürdürülebilirlik bilincini ve enerji verimliliği uygulamalarına erişimi kolaylaştırmak.
+Akıl Yürütme ve Kişiselleştirme: Model, sadece alıntı yapmak yerine, kitaptaki bilgileri analiz eder, yorumlar ve kullanıcıya özel senaryolara uyarlayarak akıl yürütmeli cevaplar sunar.
 
-## 2. Veri Seti Hakkında Bilgi
+Güvenilir Kaynak (Grounding): Cevaplar, Enerji Verimliliği Eğitim Kitabı içeriğine sıkı sıkıya bağlıdır, bu da genel LLM tahminlerinin önüne geçerek bilgi güvenilirliğini artırır.
 
-Chatbot'un bilgi tabanını oluşturan veri seti, Türkiye Cumhuriyeti Enerji ve Tabii Kaynaklar Bakanlığı'nın **Enerji Verimliliği Eğitim Kitabı**'ndan derlenmiştir (`Enerji_verimliligi_eğitim_kitabi-1-200.txt`).
+Şeffaf Geri Alma: Her cevabın temelini oluşturan kaynak metin parçaları (RAG Retrieval) gösterilerek kullanıcının bilginin kökenini doğrulaması sağlanır.
 
-* **Konu Kapsamı:** Veri seti, geniş bir yelpazede sürdürülebilirlik, çevre ve enerji yönetimi konularını kapsamaktadır:
-    * Sürdürülebilirlik ve Sürdürülebilir Kalkınma Kavramları.
-    * Çevre ve Enerji İlişkisi, Ekosistem Bütünlüğü.
-    * Enerji Yönetimi ve Verimliliği (İşletme seviyesinde uygulamalar ve önlemler).
-    * Su ve Atık Yönetimi gibi kritik sürdürülebilirlik başlıkları.
-* **Amacı:** İşletmelere ve danışmanlara, enerji tasarrufu potansiyellerini belirleme ve verimlilik artırıcı projelere rehberlik etme konusunda bilgi sağlamaktır.
+Hızlı Performans: Önceden hesaplanmış FAISS indeksi ve Streamlit'in önbellekleme mekanizması (@st.cache_resource) sayesinde, büyük veri setine saniyeler içinde erişilir.
 
-## 3. Kullanılan Yöntemler ve Çözüm Mimariniz
+İçin İdeal:
 
-Bu chatbot, **RAG (Retrieval Augmented Generation)** mimarisi üzerine inşa edilmiştir.
+Enerji verimliliği denetçileri ve danışmanları.
 
-### Kullanılan Ana Teknolojiler
+Sektördeki mevzuatlar ve teknik uygulamalar hakkında hızlı bilgi arayan işletme yöneticileri.
 
-| Bileşen | Görevi | Tahmini Araç/API |
-| :--- | :--- | :--- |
-| **Büyük Dil Modeli (LLM)** | Cevap üretme ve akıllı etkileşim | `<Gemini API Model Adı (Örn: gemini-2.5-flash)>` |
-| **RAG Çatısı** | Veri işleme, sorgu yönetimi | `<LangChain veya Haystack veya Benzeri Kütüphane>` |
-| **Vektör Veritabanı** | Metin parçalarını depolama (Gömme) | `<ChromaDB, Pinecone, FAISS veya Benzeri>` |
-| **Web Arayüzü** | Kullanıcı ile etkileşim | `<Streamlit veya Gradio>` |
+Akademik çalışma yapan öğrenciler ve araştırmacılar.
 
-### RAG Akışı (Çözüm Mimarisi)
+🧠 Çözüm Mimarisi (RAG İşlem Hattı)
 
-1.  **Veri Hazırlama (Chunking):** Yüklenen büyük doküman, anlam bütünlüğünü koruyacak şekilde küçük parçalara (chunk) ayrılır.
-2.  **Vektörleştirme (Embedding):** Bu metin parçaları, bir Vektör Gömme Modeli (Embedding Model) kullanılarak sayısal vektörlere dönüştürülür ve Vektör Veritabanına kaydedilir.
-3.  **Sorgulama (Retrieval):** Kullanıcı bir soru sorduğunda, bu soru da vektörleştirilir ve veritabanında en yakın (en alakalı) metin parçaları çekilir.
-4.  **Cevap Üretimi (Generation):** Çekilen alakalı metin parçaları, kullanıcının orijinal sorusuyla birlikte **Gemini** büyük dil modeline bir komut (Prompt) olarak gönderilir.
-5.  **Sonuç:** Gemini, bu bağlama dayanarak doğru, kaynağa dayalı cevabı üretir ve kullanıcıya sunar.
+Proje, tam teşekküllü bir RAG (Retrieval-Augmented Generation) işlem hattı uygulamaktadır:
 
-## 4. Elde Edilen Sonuçlar (Proje Tamamlandıktan Sonra Doldurulacaktır)
+Bileşen
 
-* `<Projeniz çalıştıktan sonra elde ettiğiniz en çarpıcı başarıyı/sonucu yazınız. Örn: "Chatbot, enerji verimliliği yatırımlarının geri ödeme süresi hesaplamaları gibi teknik konularda bile yüksek doğrulukla cevap üretebilmiştir.">`
-* `<Projenin kaç saniyede cevap ürettiği gibi performans metrikleri ekleyebilirsiniz.>`
+Görev
 
-## 5. Çalışma Kılavuzu ve Kurulum (Opsiyonel: Detaylar İçin Ayrı Bir Döküman Varsa Link Verilir)
+Teknoloji
 
-Bu projeyi yerel ortamınızda çalıştırmak için izlenecek adımlar:
+Büyük Dil Modeli (LLM)
 
-1.  ...
-2.  ...
+Cevap Sentezi
 
-## 6. Canlı Demo (Web Arayüzü Linki)
+Gemini 2.5 Flash
 
-Projenin çalışan, canlı demosu ve arayüzü aşağıdaki linkte mevcuttur.
+Vektör Gömme
 
-**🔗 CHATBOT ARAYÜZÜ:** `<Streamlit, Gradio veya Hugging Face Spaces Deployment Linkinizi Buraya Ekleyiniz>`
+Metin Dönüşümü
+
+text-embedding-004
+
+Vektör Depolama
+
+Hızlı Arama
+
+FAISS (CPU)
+
+Arayüz
+
+Dağıtım
+
+Streamlit
+
+Veri
+
+Temel Bilgi Kaynağı
+
+Enerji_verimliligi_eğitim_kitabi.txt
+
+RAG Akışı
+
+Veri Hazırlama: Enerji_verimliligi_eğitim_kitabi.txt dosyası okunur ve data.py tarafından anlam bütünlüğünü koruyan parçalara ayrılır (Chunking).
+
+Vektörleştirme: Bu parçalar, Google'ın gömme modeli ile sayısal vektörlere dönüştürülür.
+
+İndeksleme: Vektörler, hızlı arama için FAISS indeksi olarak diske kaydedilir.
+
+Sorgulama: Kullanıcı sorusu vektörleştirilir ve FAISS'te en alakalı metin parçaları (kaynak bağlam) çekilir.
+
+Cevap Üretimi: Çekilen bağlam ve kullanıcı sorusu, Gemini 2.5 Flash modeline gönderilerek nihai, güvenilir cevap üretilir.
+
+⚙️ Yerel Kurulum ve Çalıştırma
+
+1. Dosya Yapısı
+
+Proje yapısı, modüler ve temiz bir mimari sunar:
+
+/enerji-verimliligi-rag/
+├── app.py                      # Streamlit arayüzü ve RAG sorgu döngüsü.
+├── data.py                     # Veri hazırlama, vektörleştirme ve FAISS indeksi oluşturma.
+├── requirements.txt            # Gerekli tüm Python kütüphaneleri.
+└── Enerji_verimliligi_eğitim_kitabi.txt # Bilgi kaynağı dosyası.
+
+
+2. Adımlar
+
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları sırasıyla izleyin:
+
+a. Klonlama ve Bağımlılıklar
+
+# Depoyu klonlayın ve klasöre geçin
+git clone <DEPO_ADRESİ>
+cd <PROJE_KLASÖRÜ>
+
+# Gerekli paketleri yükleyin
+pip install -r requirements.txt
+
+
+b. API Anahtarını Tanımlama
+
+Chatbot'un Gemini API'ye erişimi için anahtarınızı ortam değişkeni olarak ayarlayın:
+
+# Linux/macOS
+export GEMINI_API_KEY="SİZİN_API_ANAHTARINIZ_BURAYA"
+
+# Windows (CMD)
+set GEMINI_API_KEY="SİZİN_API_ANAHTARINIZ_BURAYA"
+
+
+c. Uygulamayı Başlatma
+
+Anahtar tanımlandıktan sonra Streamlit uygulamasını başlatın:
+
+streamlit run app.py
+
+
+Tarayıcınızda otomatik olarak açılan adrese gidin.
+
+🔗 Dağıtım ve İletişim
+
+Canlı Dağıtım
+
+Uygulamanın çalışan, canlı demosu Streamlit Cloud üzerinden erişilebilir:
+🔗 Canlı Uygulama Linki
+
+CHATBOT ARAYÜZÜ: https://genaibootcampprojesi-tvfvbdqspt4mpkuasvszkd.streamlit.app/
+
+
