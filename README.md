@@ -45,45 +45,46 @@ Projenin çekirdeğini oluşturan **Retrieval-Augmented Generation (RAG)** mimar
 
 ---
 
-## ⚙️ Proje Yapısı
-enerji-verimliligi-ai-chatbot/
+## 📂 Proje Yapısı
 
+enerji-verimliligi-ai-chatbot/
 │
-├── app.py # Streamlit tabanlı ana uygulama dosyası
-├── data.py # Veri hazırlama ve FAISS index oluşturma modülü
-├── Enerji_verimliligi_eğitim_kitabi.txt # 1000+ sayfalık kaynak metin
-├── requirements.txt # Gerekli Python kütüphaneleri
-├── .env # API anahtarı (Gemini)
-└── README.md # Proje açıklama dosyası
+├── app.py                         # Streamlit tabanlı ana uygulama dosyası
+├── data.py                        # Veri hazırlama ve FAISS index oluşturma modülü
+├── Enerji_verimliligi_eğitim_kitabi.txt   # 1000+ sayfalık kaynak metin
+├── requirements.txt               # Gerekli Python kütüphaneleri
+├── .env                           # API anahtarı (Gemini)
+└── README.md                      # Proje açıklama dosyası
+
 
 ---
 
 # 🔧 Kurulum ve Çalıştırma Adımları
 
-# 1️⃣ Depoyu Klonlayın
+# Depoyu Klonlayın
 git clone https://github.com/<kullanici-adiniz>/enerji-verimliligi-ai-chatbot.git
 cd enerji-verimliligi-ai-chatbot
 
-# 2️⃣ Sanal Ortam Oluşturun
+# Sanal Ortam Oluşturun
 python -m venv venv
 
-# 3️⃣ Sanal Ortamı Etkinleştirin
+# Sanal Ortamı Etkinleştirin
 # (Windows)
 venv\Scripts\activate
 # (Mac/Linux)
 source venv/bin/activate
 
-# 4️⃣ Bağımlılıkları Yükleyin
+# Bağımlılıkları Yükleyin
 pip install -r requirements.txt
 
-# 5️⃣ API Anahtarını Tanımlayın (.env dosyasını oluşturun ve içine ekleyin)
+# API Anahtarını Tanımlayın (.env dosyasını oluşturun ve içine ekleyin)
 # Örnek:
 # GEMINI_API_KEY="SİZİN_GEMINI_API_ANAHTARINIZ"
 
-# 6️⃣ Uygulamayı Başlatın
+# Uygulamayı Başlatın
 streamlit run app.py
 
-# 🌐 Uygulama genellikle şu adreste açılır:
+# Uygulama genellikle şu adreste açılır:
 # http://localhost:8501
 
 
