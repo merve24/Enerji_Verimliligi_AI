@@ -50,8 +50,7 @@ Projenin çekirdeğini oluşturan **Retrieval-Augmented Generation (RAG)** mimar
 
 Projenin temel dizin ve dosya yapısı aşağıdaki gibidir:
 
-enerji-verimliligi-ai-chatbot/
-│
+enerji-verimliligi-ai-chatbot/│
 ├── app.py                        
 ├── data.py                       
 ├── Enerji_verimliligi_eğitim_kitabi.txt 
