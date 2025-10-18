@@ -70,7 +70,7 @@ cd enerji-verimliligi-ai-chatbot```
 
 ### Sanal Ortam Oluşturun
 
-####```python -m venv venv```
+####python -m venv venv
 
 ---
 ### Sanal Ortamı Etkinleştirin
