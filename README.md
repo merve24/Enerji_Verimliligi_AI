@@ -6,7 +6,7 @@ Model, enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, ölçme ve doğr
 **Retrieval-Augmented Generation (RAG)** mimarisi sayesinde, model genel bilgi yerine kitaptan aldığı güvenilir verilere dayanarak akıl yürütür ve kişiselleştirilmiş, derinlemesine cevaplar üretir.
 Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve öğrenciler için teknik bilgilere **doğrudan, hızlı ve doğrulanabilir erişim** sağlamaktır.
 
-**Temel hedef:**  
+**Temel hedef:** 
 
 “Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji uygulamalarını destekleyen akıllı bir bilgi asistanı oluşturmak.”
 
@@ -61,33 +61,33 @@ enerji-verimliligi-ai-chatbot/
 
 ---
 
-# 🔧 Kurulum ve Çalıştırma Adımları
+## 🔧 Kurulum ve Çalıştırma Adımları
 
-# Depoyu Klonlayın
+### Depoyu Klonlayın
 git clone https://github.com/<kullanici-adiniz>/enerji-verimliligi-ai-chatbot.git
 cd enerji-verimliligi-ai-chatbot
 
-# Sanal Ortam Oluşturun
+### Sanal Ortam Oluşturun
 python -m venv venv
 
-# Sanal Ortamı Etkinleştirin
-# (Windows)
+### Sanal Ortamı Etkinleştirin
+### (Windows)
 venv\Scripts\activate
-# (Mac/Linux)
+### (Mac/Linux)
 source venv/bin/activate
 
-# Bağımlılıkları Yükleyin
+### Bağımlılıkları Yükleyin
 pip install -r requirements.txt
 
-# API Anahtarını Tanımlayın (.env dosyasını oluşturun ve içine ekleyin)
-# Örnek:
-# GEMINI_API_KEY="SİZİN_GEMINI_API_ANAHTARINIZ"
+### API Anahtarını Tanımlayın (.env dosyasını oluşturun ve içine ekleyin)
+### Örnek:
+### GEMINI_API_KEY="SİZİN_GEMINI_API_ANAHTARINIZ"
 
-# Uygulamayı Başlatın
+### Uygulamayı Başlatın
 streamlit run app.py
 
-# Uygulama genellikle şu adreste açılır:
-# http://localhost:8501
+### Uygulama genellikle şu adreste açılır:
+### http://localhost:8501
 
 
 
