@@ -51,7 +51,7 @@ Projenin çekirdeğini oluşturan **Retrieval-Augmented Generation (RAG)** mimar
 Projenin temel dizin ve dosya yapısı aşağıdaki gibidir:
 
 
-###enerji-verimliligi-ai-chatbot/
+enerji-verimliligi-ai-chatbot/
 │
 ├── app.py                         
 ├── data.py                        
@@ -91,8 +91,7 @@ streamlit run app.py
  Uygulama genellikle şu adreste açılır:
  http://localhost:8501
 
-
-
+https://genaibootcampprojesi-9wvjwdb2dgz6eqfqeywqdx.streamlit.app/#enerji-verimliligi-ai-chatbot
 ----
 
 
