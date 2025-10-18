@@ -46,9 +46,9 @@ Projenin çekirdeğini oluşturan **Retrieval-Augmented Generation (RAG)** mimar
 
 ---
 
-## 📂 📂 Proje Yapısı
+## 📂 Proje Yapısı
 
-enerji-verimliligi-ai-chatbot/
+energi-verimliligi-ai-chatbot/
 │
 ├── app.py # Streamlit tabanlı ana uygulama dosyası
 ├── data.py # Veri hazırlama ve FAISS index oluşturma modülü
@@ -56,7 +56,6 @@ enerji-verimliligi-ai-chatbot/
 ├── requirements.txt # Gerekli Python kütüphaneleri
 ├── .env # API anahtarı (Gemini)
 └── README.md # Proje açıklama dosyası
-
 
 ---
 
@@ -91,17 +90,7 @@ streamlit run app.py
 
 
 ----
-Chatbot’un Sunduğu Özellikler
 
-📚 Kaynak Tabanlı Bilgi: Sadece eğitim kitabındaki verilere dayanarak cevap verir.
-
-⚙️ Teknik Derinlik: HVAC, kojenerasyon, motor verimliliği, enerji etütleri gibi teknik konularda uzman yanıtlar.
-
-🧾 Ekonomik Analiz: Net Bugünkü Değer, Geri Ödeme Süresi gibi kavramları formül ve örneklerle açıklar.
-
-🔍 Şeffaflık: Cevabın dayandığı kaynak metin her zaman görüntülenebilir.
-
-🎯 Kapsam: Enerji yöneticileri, danışmanlık firmaları, mühendislik öğrencileri ve akademisyenler için özel olarak tasarlanmıştır.
 
 
 İletişim
