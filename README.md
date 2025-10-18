@@ -48,9 +48,9 @@ Projenin çekirdeğini oluşturan **Retrieval-Augmented Generation (RAG)** mimar
 
 ## 📂 📂 Proje Yapısı
 
-enerji-verimliligi-ai-chatbot/
+enerji-verimliligi-ai-chatbot/'''
 │
-├── app.py # Streamlit tabanlı ana uygulama dosyası
+├── app.py # Streamlit tabanlı ana uygulama dosyası'''
 ├── data.py # Veri hazırlama ve FAISS index oluşturma modülü
 ├── Enerji_verimliligi_eğitim_kitabi.txt # 1000+ sayfalık kaynak metin
 ├── requirements.txt # Gerekli Python kütüphaneleri
