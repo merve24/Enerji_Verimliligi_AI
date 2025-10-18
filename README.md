@@ -7,7 +7,8 @@ Model, enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, ölçme ve doğr
 Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve öğrenciler için teknik bilgilere **doğrudan, hızlı ve doğrulanabilir erişim** sağlamaktır.
 
 **Temel hedef:**  
-> “Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji uygulamalarını destekleyen akıllı bir bilgi asistanı oluşturmak.”
+
+“Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji uygulamalarını destekleyen akıllı bir bilgi asistanı oluşturmak.”
 
 ---
 
