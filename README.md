@@ -60,40 +60,34 @@ enerji-verimliligi-ai-chatbot/
 
 ---
 
-## 🔧 Kurulum ve Çalıştırma Adımları
----
+## 🚀 Kurulum ve Çalıştırma Adımları
 
-### Depoyu Klonlayın
-###git clone https://github.com/<kullanici-adiniz>/enerji-verimliligi-ai-chatbot.git
-cd enerji-verimliligi-ai-chatbot```
----
+### 1. Depoyu Klonlayın
+git clone https://github.com/enerji-verimliligi-ai-chatbot.git
+cd enerji-verimliligi-ai-chatbot
 
-### Sanal Ortam Oluşturun
+### 2. Sanal Ortam Oluşturun
+python -m venv venv
 
-####python -m venv venv
+### 3. Sanal Ortamı Etkinleştirin
+Windows için:
+venv\Scripts\activate
+Mac/Linux için:
+source venv/bin/activate
 
----
-### Sanal Ortamı Etkinleştirin
-(Windows)
-####```venv\Scripts\activate```
-(Mac/Linux)
-####```source venv/bin/activate```
+### 4. Bağımlılıkları Yükleyin
+pip install -r requirements.txt
 
----
-### Bağımlılıkları Yükleyin
-####```pip install -r requirements.txt```
+### 5. API Anahtarını Tanımlayın
+ .env dosyası oluşturun ve içine ekleyin:
+echo 'GEMINI_API_KEY="SİZİN_GEMINI_API_ANAHTARINIZ"' > .env
 
----
-### API Anahtarını Tanımlayın (.env dosyasını oluşturun ve içine ekleyin)
-Örnek:####```GEMINI_API_KEY="SİZİN_GEMINI_API_ANAHTARINIZ"```
+### 6. Uygulamayı Başlatın
+streamlit run app.py
 
----
-### Uygulamayı Başlatın
-####```streamlit run app.py```
----
+ Uygulama genellikle şu adreste açılır:
+ http://localhost:8501
 
-### Uygulama genellikle şu adreste açılır:
-####```http://localhost:8501```
 
 
 ----
