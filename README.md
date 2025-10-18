@@ -48,14 +48,18 @@ Projenin çekirdeğini oluşturan **Retrieval-Augmented Generation (RAG)** mimar
 
 ## 📂 Proje Yapısı
 
-energi-verimliligi-ai-chatbot/
+Projenin temel dizin ve dosya yapısı aşağıdaki gibidir:
+
+```text
+enerji-verimliligi-ai-chatbot/
 │
-├── app.py # Streamlit tabanlı ana uygulama dosyası
-├── data.py # Veri hazırlama ve FAISS index oluşturma modülü
-├── Enerji_verimliligi_eğitim_kitabi.txt # 1000+ sayfalık kaynak metin
-├── requirements.txt # Gerekli Python kütüphaneleri
-├── .env # API anahtarı (Gemini)
-└── README.md # Proje açıklama dosyası
+├── app.py                         # Streamlit tabanlı ana uygulama dosyası
+├── data.py                        # Veri hazırlama, chunking ve FAISS index oluşturma modülü
+├── Enerji_verimliligi_eğitim_kitabi.txt # 1000+ sayfalık temel RAG kaynak metni
+├── requirements.txt               # Gerekli Python kütüphaneleri listesi
+├── .streamlit/                    # Streamlit ve secrets.toml dosyalarını içerir
+│   └── secrets.toml               # Gemini API anahtarının güvenli saklanması (Git'e eklenmemelidir)
+└── README.md                      # Proje açıklama ve kılavuz dosyası
 
 ---
 
