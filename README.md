@@ -58,6 +58,7 @@ enerji-verimliligi-ai-chatbot/
 └── README.md                      # Proje açıklama dosyası
 
 
+
 ---
 
 # 🔧 Kurulum ve Çalıştırma Adımları
@@ -101,6 +102,7 @@ Chatbot’un Sunduğu Özellikler
 🔍 Şeffaflık: Cevabın dayandığı kaynak metin her zaman görüntülenebilir.
 
 🎯 Kapsam: Enerji yöneticileri, danışmanlık firmaları, mühendislik öğrencileri ve akademisyenler için özel olarak tasarlanmıştır.
+
 
 İletişim
 
