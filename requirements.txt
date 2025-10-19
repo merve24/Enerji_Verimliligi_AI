@@ -1,0 +1,6 @@
+google-genai
+streamlit
+numpy
+faiss-cpu
+google-api-core
+google-generativeai
