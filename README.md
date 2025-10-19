@@ -88,12 +88,11 @@ echo 'GEMINI_API_KEY="SİZİN_GEMINI_API_ANAHTARINIZ"' > .env
 ### 6. Uygulamayı Başlatın
 streamlit run app.py
 
- Uygulama genellikle şu adreste açılır:
+ Uygulamayı Çalıştırın:
  http://localhost:8501
 
-https://genaibootcampprojesi-9wvjwdb2dgz6eqfqeywqdx.streamlit.app/#enerji-verimliligi-ai-chatbot
+### Canlı Uygulama (Deployment) Linki: https://genaibootcampprojesi-9wvjwdb2dgz6eqfqeywqdx.streamlit.app/#enerji-verimliligi-ai-chatbot 
 ----
-
 
 
 İletişim
