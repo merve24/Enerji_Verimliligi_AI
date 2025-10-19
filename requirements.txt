@@ -1,4 +1,0 @@
-google-genai
-streamlit
-numpy
-faiss-cpu
