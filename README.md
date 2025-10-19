@@ -13,6 +13,9 @@ Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve teknik uzma
 > **“Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji yönetimini destekleyen akıllı bir bilgi altyapısı oluşturmak.”**
 
 ---
+## 🎬 Uygulama Önizlemesi
+![Enerji Verimliliği Chatbot Demo](demo.gif)
+### Canlı Uygulama (Deployment) Linki:https://genaibootcampprojesi-nhh2nty3oesoj9yzhrzqyn.streamlit.app/
 
 ## ✨ Özellikler ve Kullanım Durumları
 
@@ -94,7 +97,6 @@ streamlit run app.py
  Uygulamayı Çalıştırın:
  http://localhost:8501
 
-### Canlı Uygulama (Deployment) Linki:https://genaibootcampprojesi-nhh2nty3oesoj9yzhrzqyn.streamlit.app/
 
 
 İletişim
