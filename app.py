@@ -1,0 +1,151 @@
+# Streamlit web uygulamasının ana dosyası
+import streamlit as st
+from google import genai
+import numpy as np
+import os
+# data.py dosyasındaki fonksiyonu içe aktarıyoruz
+from data import prepare_rag_data 
+
+# --- 1. SABİT VERİLERİ VE BAĞLANTILARI TANIMLAMA ---
+
+# Dosya adı, hata mesajlarında doğru adın görünmesi için burada tanımlanır.
+CORRECT_FILE_NAME = "Enerji_verimliligi_eğitim_kitabi.txt"
+
+# Streamlit API Anahtarını Streamlit Secrets'tan alacak
+try:
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"] 
+except Exception as e:
+    st.error(f"API Anahtarı Yüklenemedi: Lütfen Streamlit Cloud Secrets'ta GEMINI_API_KEY'i tanımladığınızdan emin olun. Hata: {e}")
+    st.stop()
+    
+# Cache kullanarak verinin sadece BİR KEZ yüklenmesini sağlıyoruz
+@st.cache_resource(ttl=900) 
+def load_rag_data(api_key):
+    # data.py dosyasındaki ana fonksiyonu çağırır ve FAISS indexini yükler
+    return prepare_rag_data(api_key)
+
+# Veri yükleme fonksiyonunu API key ile çağırıyoruz.
+# FAISS indeks dosyaları (faiss_index.bin ve text_chunks.npy) GitHub'da olduğu için,
+# bu işlem artık saniyeler içinde tamamlanacaktır.
+text_chunks, index = load_rag_data(GEMINI_API_KEY) 
+
+# Eğer data.py hata yakalayıp boş döndürürse, burada uygulamayı durdururuz.
+if index is None:
+    st.error(f"Veri seti yüklenemedi. Lütfen '{CORRECT_FILE_NAME}' dosyasının GitHub'da app.py ve data.py ile aynı dizinde bulunduğundan emin olun.")
+    st.stop()
+
+# Client'ı sadece Gemini modelini çağırmak için bir kez tanımlıyoruz.
+client = genai.Client(api_key=GEMINI_API_KEY) 
+
+
+# --- 2. RAG Sorgu Fonksiyonu ---
+# k=8'e yükseltildi (daha fazla ve küçük parça çekmek için)
+def rag_query_streamlit(query, k=8): 
+    
+    # 2A. Sorguyu Vektörleştirme (Retrieval)
+    
+    # API'den yanıtı alma
+    response_embedding = client.models.embed_content(
+        model='text-embedding-004',
+        contents=[query]
+    )
+    
+    # 💥 DÜZELTME: API yanıtı olan 'EmbedContentResponse' nesnesine 
+    # nokta notasyonu ile erişimi zorluyoruz. Eğer '.embedding' başarısız olursa, 
+    # alternatif yolları deniyoruz (AttributeError'ı yakalamak için iç içe try/except).
+    try:
+        # Deneme 1: Standart .embedding erişimi 
+        query_embedding = np.asarray(response_embedding.embedding[0], dtype='float32')
+    except AttributeError:
+        # Deneme 2: .values erişimi (Bazı Streamlit/Python sarıcılarında görülen alternatif)
+        try:
+            query_embedding = np.asarray(response_embedding.values[0], dtype='float32')
+        except Exception:
+            # Deneme 3: Hem '.embedding' hem de '.values' başarısız oldu.
+            st.error(f"Vektörleştirme API yanıtı hatası: 'EmbedContentResponse' nesnesinde '.embedding' veya '.values' özelliği bulunamadı.")
+            raise ValueError("API'den gelen gömülü vektör verisine erişilemiyor.")
+    except Exception as e:
+        # TypeError veya başka bir genel hata yakalandı.
+        st.error(f"Vektörleştirme sırasında genel hata oluştu: {e}.")
+        raise ValueError("API'den gelen gömülü vektör verisine erişilemiyor.")
+
+
+    # FAISS'te en yakın parçaları arama
+    # FAISS, (1, 1536) boyutunda bir array bekler.
+    # query_embedding'in (1536,) boyutunda olduğu varsayılır, bu yüzden [np.array] ile boyut eklenir.
+    D, I = index.search(np.array([query_embedding], dtype='float32'), k)
+    
+    # 2C. Parçaları metin olarak birleştirme
+    retrieved_text = "\n---\n".join([text_chunks[i] for i in I[0]])
+    
+    # 2D. Prompt oluşturma (Akıl Yürütmeye İzin Veren ANCAK Halüsinasyonu Engelleyen Prompt)
+    prompt = f"""
+    Sen, "Enerji Verimliliği Eğitim Kitabı"ndan bilgi alan uzman bir danışmansın. 
+    Senin tek bilgi kaynağın aşağıdaki Bağlam (Context) içinde yer alan metinlerdir.
+
+    1. **AKIL YÜRÜTME:** Kitaptan Çekilen Kaynaklar ışığında, akıl yürüterek kapsamlı ve kişiselleştirilmiş bir cevap üret. Cevabının doğruluğu, sadece bu kaynaklara dayanmalıdır.
+    2. **KAYNAK KISITLAMASI:** Bağlamda soruya net ve doğrudan cevap verecek bilgi **bulunmuyorsa**, **KESİNLİKLE KENDİ GENEL BİLGİNİ KULLANMA** ve akıl yürütmeye çalışma.
+    3. **RED YANITI:** Eğer cevap veremeyeceksen, yanıtın: "Bu konuda eğitim kitabımda yeterli ve güncel bilgi bulunmamaktadır." şeklinde olmalıdır.
+
+    Cevabını anlaşılır, profesyonel bir dille ve ilgili emojilerle sun.
+    
+    ---
+    
+    Bağlam (Kitaptan Çekilen Kaynaklar):
+    {retrieved_text}
+
+    ---
+    
+    Soru:
+    {query}
+    """
+    
+    # 2E. Cevap Üretme (Generation)
+    response = client.models.generate_content(
+        model='gemini-2.5-flash',
+        contents=prompt
+    )
+    
+    return response.text, retrieved_text
+
+# --- 3. UYGULAMA MANTIĞI VE ARAYÜZ ---
+st.set_page_config(
+    page_title="Enerji Verimliliği AI", 
+    page_icon="💡", 
+    layout="wide"
+)
+
+# Yeni isim ve açıklama buraya eklendi
+st.title("💡 Enerji Verimliliği AI Chatbot")
+st.markdown("Enerji dünyasındaki 1000 sayfalık 📚 bilgelik parmaklarınızın ucunda. Bu uzman 🤖 AI, size en güncel ve güvenilir bilgileri anında sunar.")
+
+# Session State ile mesaj geçmişini yönetme
+if "messages" not in st.session_state:
+    st.session_state["messages"] = [{"role": "assistant", "content": "Merhaba! Enerji verimliliği ve sürdürülebilirlik konularında sorularınızı yanıtlamaya hazırım. Size nasıl yardımcı olabilirim? ⚡"}]
+
+# Mesaj geçmişini arayüze yazdırma
+for msg in st.session_state.messages:
+    # Emojilerle rol belirleme
+    # 💥 DÜZELTME: Fazla ']' kaldırıldı.
+    avatar = "💡" if msg["role"] == "assistant" else "👤" 
+    st.chat_message(msg["role"], avatar=avatar).write(msg["content"])
+
+# Kullanıcı girişi ve cevap üretme
+if prompt := st.chat_input("Enerji verimliliği, sürdürülebilirlik veya çevre hakkında bir soru sorun... 📝"):
+    # Kullanıcı mesajını geçmişe ekle ve yazdır
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    st.chat_message("user", avatar="👤").write(prompt)
+
+    # Asistan cevabını üretme
+    with st.chat_message("assistant", avatar="💡"):
+        with st.spinner("Enerji Verimliliği Kitabı taranıyor ve akıl yürütülüyor... 🧠"):
+            response, source = rag_query_streamlit(prompt)
+
+        st.markdown(response)
+
+        # RAG kaynağını gösterme (Şeffaflık için)
+        with st.expander("🔍 Kullanılan Kaynak (RAG Retrieval)"):
+            st.code(source, language='text')
+
+    # Asistan cevabını geçmişe ekle
+    st.session_state.messages.append({"role": "assistant", "content": response})
