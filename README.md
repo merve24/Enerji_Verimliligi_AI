@@ -17,6 +17,8 @@ Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve teknik uzma
 ![Enerji Verimliliği Chatbot Demo](demo.gif)
 ### Canlı Uygulama (Deployment) Linki:https://genaibootcampprojesi-nhh2nty3oesoj9yzhrzqyn.streamlit.app/
 
+---
+
 ## ✨ Özellikler ve Kullanım Durumları
 
 Bu uzman chatbot, enerji verimliliği alanında **hızlı, doğru ve bağlamsal bilgi** sağlamak için tasarlanmıştır.
@@ -97,14 +99,12 @@ streamlit run app.py
  Uygulamayı Çalıştırın:
  http://localhost:8501
 
-
+---
 
 İletişim
 
 Geliştirici: Merve Nur Öztürk
 E-posta: mervenurozturk24@gmail.com
-
 LinkedIn: linkedin.com/in/merve-nur-ozturk
 
-💚 “Enerjini Bilgiyle Verimli Kullan!”
-Made with ☁️ by Merve Nur Öztürk
+
