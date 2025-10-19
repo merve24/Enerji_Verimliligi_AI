@@ -1,48 +1,51 @@
 # 💡 Enerji Verimliliği RAG Uzmanı Chatbot
 
-Enerji Verimliliği AI Chatbot, 1000+ sayfalık **"Enerji Verimliliği Eğitim Kitabı"** içeriğini temel alan, **Retrieval-Augmented Generation (RAG)** mimarisiyle geliştirilmiş özel bir **yapay zekâ danışmanıdır**.  
-Model, enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, ölçme ve doğrulama gibi konularda güvenilir, kaynak temelli yanıtlar üretir.
-  
-**Retrieval-Augmented Generation (RAG)** mimarisi sayesinde, model genel bilgi yerine kitaptan aldığı güvenilir verilere dayanarak akıl yürütür ve kişiselleştirilmiş, derinlemesine cevaplar üretir.
-Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve öğrenciler için teknik bilgilere **doğrudan, hızlı ve doğrulanabilir erişim** sağlamaktır.
+**Enerji Verimliliği AI Chatbot**, 1000+ sayfalık *"Enerji Verimliliği Eğitim Kitabı"* verisine dayanan, **Retrieval-Augmented Generation (RAG)** mimarisiyle geliştirilmiş özel bir yapay zekâ protokolüdür.  
+Model; enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, ölçümleme ve arızalanma gibi konularda **güvenilir, kaynak tabanlı ve tutarlı** yanıtlar üretir.
 
-**Temel hedef:** 
+RAG mimarisi sayesinde, model genel bilgiye değil; doğrudan **kitaptan alınan doğrulanabilir verilere** dayanarak akıl yürütme ve kişiselleştirilmiş yanıtlar oluşturur.  
+Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve teknik uzmanlar için **doğru, hızlı ve kaynak temelli bilgiye erişim** sağlamaktır.
 
-“Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji uygulamalarını destekleyen akıllı bir bilgi asistanı oluşturmak.”
+---
+
+## 🎯 Temel Hedef
+
+> **“Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji yönetimini destekleyen akıllı bir bilgi altyapısı oluşturmak.”**
 
 ---
 
 ## ✨ Özellikler ve Kullanım Durumları
 
-Bu uzman chatbot, **Enerji Verimliliği** alanında hızlı, doğru ve bağlamsal bilgi sağlamak üzere tasarlanmıştır.
+Bu uzman chatbot, enerji verimliliği alanında **hızlı, doğru ve bağlamsal bilgi** sağlamak için tasarlanmıştır.
 
 ### 🔹 Ana Özellikler
 
-- **Bağlamsal Güvenilirlik:** Yüksek doğruluk için cevaplarını sadece 1000+ sayfalık teknik dokümantasyon (Kitap) ile sınırlar.  
-- **Derinlemesine Uzmanlık:** Karmaşık teknik terimleri, formülleri ve sistem analizlerini (HVAC, Aydınlatma, Motorlar, Kojenerasyon vb.) kitaptaki verilere göre açıklar.  
-- **Hızlı Erişim:** Enerji etüt raporları veya ekonomik analiz yöntemleri (Net Bugünkü Değer, İç Karlılık Oranı) gibi kritik bilgilere saniyeler içinde ulaşım sağlar.
+- **Bağlamsal Güvenilirlik:** Yanıtlarını yalnızca 1000+ sayfalık *Enerji Verimliliği Eğitim Kitabı* verisinden üretir.  
+- **Derinlemesine Uzmanlık:** HVAC, aydınlatma, motorlar, kojenerasyon gibi teknik konuları kitap içeriğine dayanarak açıklar.  
+- **Hızlı Erişim:** Enerji etüt raporları veya ekonomik analiz yöntemleri (Net Bugünkü Değer, İç Karlılık Oranı vb.) saniyeler içinde erişilebilir.  
+- **Halüsinasyonsuz Yanıtlar:** Kaynak dışı, doğrulanmamış bilgiler üretilmez.
 
 ---
 
 ## 👥 Kimler Kullanabilir?
 
-- **Enerji Yöneticileri ve Mühendisler:** Uygulayacakları Enerji Verimliliği Önlemleri (EVÖ) hakkında hızlı teknik detaylara ve fizibilite bilgilerine ihtiyaç duyan profesyoneller.  
-- **Enerji Danışmanlık Şirketleri (ESCO):** Proje teklifleri hazırlarken veya sözleşme detaylarını (Ölçme ve Doğrulama - Ö&D) netleştirirken uzman bağlam arayan danışmanlar.  
-- **Üniversite Öğrencileri ve Akademisyenler:** Enerji verimliliği dersleri ve akademik çalışmaları için güvenilir birincil kaynak bilgisine erişmek isteyenler.
+- **Enerji Yöneticileri ve Mühendisler:** Enerji Verimliliği Önlemleri (EVÖ) ve fizibilite analizleri hakkında teknik bilgiye ihtiyaç duyan profesyoneller.  
+- **Enerji Danışmanlık Şirketleri (ESCO):** Ölçme ve Doğrulama (Ö&D) süreçleri veya teklif hazırlığı sırasında hızlı bilgiye erişmek isteyen ekipler.  
+- **Üniversite Öğrencileri ve Akademisyenler:** Enerji verimliliği ve sürdürülebilirlik konularında güvenilir kaynak arayan araştırmacılar.
 
 ---
 
 ## 🚀 Kullanılan Teknolojiler
 
-Projenin çekirdeğini oluşturan **Retrieval-Augmented Generation (RAG)** mimarisi, aşağıdaki modern **GenAI** ve veri işleme araçları üzerine inşa edilmiştir:
+Proje, modern **GenAI** ve **veri işleme** teknolojileri üzerine inşa edilmiştir:
 
 | Bileşen | Görev | Teknoloji |
 |----------|--------|-----------|
-| **Model** | Akıl Yürütme ve Cevap Üretme | Gemini 2.5 Flash |
-| **Vektörleştirme (Embedding)** | Metinleri sayısal vektörlere dönüştürme | text-embedding-004 |
-| **Veri Deposu** | Vektörlerin hızlı aranması | FAISS (Facebook AI Similarity Search) |
-| **Arayüz** | Kullanıcı etkileşimli web uygulaması | Streamlit |
-| **Veri Kaynağı** | 1000 sayfalık "Enerji Verimliliği Eğitim Kitabı" | enerji_verimliligi_eğitim_kitabi.txt |
+| Model | Akıl yürütme ve içerik üretimi | **Gemini 2.5 Flash** |
+| Vektörleştirme (Embedding) | Metinleri dijital vektörlere dönüştürme | **text-embedding-004** |
+| Veri Deposu | Vektörlerin hızlı aranması | **FAISS (Facebook AI Similarity Search)** |
+| Arayüz | Etkileşimli web uygulaması | **Streamlit** |
+| Veri Kaynağı | 1000+ sayfalık *Enerji Verimliliği Eğitim Kitabı* | **Enerji_verimliligi_eğitim_kitabi.txt** |
 
 ---
 
@@ -91,8 +94,7 @@ streamlit run app.py
  Uygulamayı Çalıştırın:
  http://localhost:8501
 
-### Canlı Uygulama (Deployment) Linki: https://genaibootcampprojesi-9wvjwdb2dgz6eqfqeywqdx.streamlit.app/#enerji-verimliligi-ai-chatbot 
-----
+### Canlı Uygulama (Deployment) Linki:https://genaibootcampprojesi-nhh2nty3oesoj9yzhrzqyn.streamlit.app/
 
 
 İletişim
