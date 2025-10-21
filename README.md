@@ -38,7 +38,7 @@ Yanıtlarını yalnızca verilen veri setinden üretir; kaynak dışı, doğrula
 
 ---
 
-## Kimler Kullanabilir?
+## Kimler Kullanabilir
 
 **Enerji Yöneticileri ve Mühendisler:**  
 Enerji verimliliği, emisyon azaltımı ve sürdürülebilir enerji politikalarıyla ilgili bilgilere hızlı erişmek isteyen profesyoneller.  
