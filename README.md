@@ -1,6 +1,6 @@
 # 💡 Enerji Verimliliği RAG Uzmanı Chatbot
 
-**Enerji Verimliliği AI Chatbot**, 1000+ sayfalık *"Enerji Verimliliği Eğitim Kitabı"* verisine dayanan, **Retrieval-Augmented Generation (RAG)** mimarisiyle geliştirilmiş özel bir yapay zekâ protokolüdür.  
+**Enerji Verimliliği AI Chatbot**, 1000+ sayfalık *"Enerji Verimliliği Eğitim Kitabı"* verisine dayanan, **Retrieval-Augmented Generation (RAG)** mimarisiyle geliştirilmiş özel bir yapay zekâ aracıdır.  
 Model; enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, ölçümleme ve arızalanma gibi konularda **güvenilir, kaynak tabanlı ve tutarlı** yanıtlar üretir.
 
 RAG mimarisi sayesinde, model genel bilgiye değil; doğrudan **kitaptan alınan doğrulanabilir verilere** dayanarak akıl yürütme ve kişiselleştirilmiş yanıtlar oluşturur.  
