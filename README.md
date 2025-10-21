@@ -1,14 +1,14 @@
-# 💡 Enerji Verimliliği RAG Uzmanı Chatbot
+# Enerji Verimliliği RAG Uzmanı Chatbot
 
 **Enerji Verimliliği AI Chatbot**, 1000+ sayfalık *"Enerji Verimliliği Eğitim Kitabı"* verisine dayanan, **Retrieval-Augmented Generation (RAG)** mimarisiyle geliştirilmiş özel bir yapay zekâ aracıdır.  
-Model; enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, ölçümleme ve arızalanma gibi konularda **güvenilir, kaynak tabanlı ve tutarlı** yanıtlar üretir.
+Model; enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, yenilenebilir enerji kaynakları ve çevre–enerji ilişkisi gibi konularda **güvenilir, kaynak tabanlı ve tutarlı** yanıtlar üretir.
 
 RAG mimarisi sayesinde, model genel bilgiye değil; doğrudan **kitaptan alınan doğrulanabilir verilere** dayanarak akıl yürütme ve kişiselleştirilmiş yanıtlar oluşturur.  
 Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve teknik uzmanlar için **doğru, hızlı ve kaynak temelli bilgiye erişim** sağlamaktır.
 
 ---
 
-## 🎯 Temel Hedef
+## Temel Hedef
 
 > **“Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji yönetimini destekleyen akıllı bir bilgi altyapısı oluşturmak.”**
 
@@ -19,28 +19,39 @@ Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve teknik uzma
 
 ---
 
-## ✨ Özellikler ve Kullanım Durumları
+## Ana Özellikler
 
-Bu uzman chatbot, enerji verimliliği alanında **hızlı, doğru ve bağlamsal bilgi** sağlamak için tasarlanmıştır.
+**Kaynak Temelli Güvenilirlik:**  
+Yanıtlarını yalnızca 1000+ sayfalık *Enerji Verimliliği Eğitim Kitabı* verisinden üretir.
 
-### 🔹 Ana Özellikler
+**Uzmanlık Alanları:**  
+- Sürdürülebilir kalkınma, çevre–enerji ilişkisi, ekosistem güvenliği  
+- Yenilenebilir enerji kaynakları (güneş, rüzgâr, hidroelektrik, biyokütle, jeotermal)  
+- Enerji verimliliği uygulamaları (binalarda, sanayide, su ve atık yönetiminde)  
+- İklim değişikliği, karbon emisyonları ve çevresel etkiler konularında özet ve yönlendirici bilgiler sunar  
 
-- **Bağlamsal Güvenilirlik:** Yanıtlarını yalnızca 1000+ sayfalık *Enerji Verimliliği Eğitim Kitabı* verisinden üretir.  
-- **Derinlemesine Uzmanlık:** HVAC, aydınlatma, motorlar, kojenerasyon gibi teknik konuları kitap içeriğine dayanarak açıklar.  
-- **Hızlı Erişim:** Enerji etüt raporları veya ekonomik analiz yöntemleri (Net Bugünkü Değer, İç Karlılık Oranı vb.) saniyeler içinde erişilebilir.  
-- **Halüsinasyonsuz Yanıtlar:** Kaynak dışı, doğrulanmamış bilgiler üretilmez.
+**Hızlı Bilgi Erişimi:**  
+Enerji etüt raporları, sürdürülebilir kalkınma hedefleri, döngüsel ekonomi ve enerji politikalarına ilişkin bilgilere saniyeler içinde erişim sağlar.  
 
----
-
-## 👥 Kimler Kullanabilir?
-
-- **Enerji Yöneticileri ve Mühendisler:** Enerji Verimliliği Önlemleri (EVÖ) ve fizibilite analizleri hakkında teknik bilgiye ihtiyaç duyan profesyoneller.  
-- **Enerji Danışmanlık Şirketleri (ESCO):** Ölçme ve Doğrulama (Ö&D) süreçleri veya teklif hazırlığı sırasında hızlı bilgiye erişmek isteyen ekipler.  
-- **Üniversite Öğrencileri ve Akademisyenler:** Enerji verimliliği ve sürdürülebilirlik konularında güvenilir kaynak arayan araştırmacılar.
+**Doğrulanabilir Yanıtlar:**  
+Yanıtlarını yalnızca verilen veri setinden üretir; kaynak dışı, doğrulanmamış bilgiler oluşturmaz.  
 
 ---
 
-## 🚀 Kullanılan Teknolojiler
+## Kimler Kullanabilir?
+
+**Enerji Yöneticileri ve Mühendisler:**  
+Enerji verimliliği, emisyon azaltımı ve sürdürülebilir enerji politikalarıyla ilgili bilgilere hızlı erişmek isteyen profesyoneller.  
+
+**Enerji Danışmanlık Şirketleri (ESCO):**  
+Ölçme, doğrulama, enerji etütleri ve yeşil dönüşüm planlarında kaynak tabanlı bilgilerle çalışan ekipler.  
+
+**Üniversite Öğrencileri ve Akademisyenler:**  
+Enerji verimliliği, sürdürülebilir kalkınma, çevre yönetimi ve iklim değişikliği konularında güvenilir Türkçe kaynaklara dayalı araştırmalar yapmak isteyenler.
+
+---
+
+## Kullanılan Teknolojiler
 
 Proje, modern **GenAI** ve **veri işleme** teknolojileri üzerine inşa edilmiştir:
 
@@ -54,7 +65,7 @@ Proje, modern **GenAI** ve **veri işleme** teknolojileri üzerine inşa edilmi�
 
 ---
 
-## 📂 Proje Yapısı
+## Proje Yapısı
 
 Projenin temel dizin ve dosya yapısı aşağıdaki gibidir:
 
@@ -71,7 +82,7 @@ enerji-verimliligi-ai-chatbot/
 
 ---
 
-## 🚀 Kurulum ve Çalıştırma Adımları
+## Kurulum ve Çalıştırma Adımları
 
 ### 1. Depoyu Klonlayın
 git clone https://github.com/enerji-verimliligi-ai-chatbot.git
