@@ -59,7 +59,7 @@ Proje, modern **GenAI** ve **veri işleme** teknolojileri üzerine inşa edilmi�
 |----------|--------|-----------|
 | Model | Akıl yürütme ve içerik üretimi | **Gemini 2.5 Flash** |
 | Vektörleştirme (Embedding) | Metinleri dijital vektörlere dönüştürme | **text-embedding-004** |
-| Veri Deposu | Vektörlerin hızlı aranması | **Kosinüs Benzerliği (Manuel Hesaplama)** |
+| Veri Deposu | Vektörlerin hızlı aranması | **ChromaDB Vektör Veritabanı** |
 | Arayüz | Etkileşimli web uygulaması | **Streamlit** |
 | Veri Kaynağı | 1000+ sayfalık *Enerji Verimliliği Eğitim Kitabı* | **Enerji_verimliligi_eğitim_kitabi.txt** |
 
