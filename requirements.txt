@@ -1,5 +1,6 @@
 streamlit
 google-generativeai
 chromadb==0.4.24
-protobuf==4.25.3
+requests
 numpy==1.26.4
+protobuf==4.25.3
