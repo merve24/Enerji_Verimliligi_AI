@@ -45,9 +45,9 @@ Proje aşağıdaki dosyalardan beslenir:
 
 ---
 
-## ⚙️ Kurulum
 
-### 1. Projeyi klonla
+https://github.com/user-attachments/assets/8e8ef169-1d0a-41ed-90f9-a0d00d9a9e27
+
 
 git clone https://github.com/kullanici/enerji_verimliligi_ai.git
 cd enerji_verimliligi_ai
