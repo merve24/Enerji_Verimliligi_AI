@@ -1,67 +1,69 @@
-# Enerji Verimliliği AI Chatbot
+# 💡 Enerji Verimliliği AI Chatbot
 
-**Enerji Verimliliği AI Chatbot**, 1000+ sayfalık *"Enerji Verimliliği Eğitim Kitabı"* verisine dayanan, **Retrieval-Augmented Generation (RAG)** mimarisiyle geliştirilmiş özel bir yapay zekâ aracıdır.  
-Model; enerji yönetimi, HVAC sistemleri, sürdürülebilirlik, yenilenebilir enerji kaynakları ve çevre–enerji ilişkisi gibi konularda **güvenilir, kaynak tabanlı ve tutarlı** yanıtlar üretir.
-
-RAG mimarisi sayesinde, model genel bilgiye değil; doğrudan **kitaptan alınan doğrulanabilir verilere** dayanarak akıl yürütme ve kişiselleştirilmiş yanıtlar oluşturur.  
-Amaç, enerji sektöründe çalışan mühendisler, danışmanlar ve teknik uzmanlar için **doğru, hızlı ve kaynak temelli bilgiye erişim** sağlamaktır.
+Bu proje, enerji verimliliği, mevzuat ve bina enerji performansı yönetmelikleri üzerine geliştirilmiş yapay zekâ destekli bir bilgi asistanıdır.  
+Sistem, yalnızca güvenilir dokümanlara dayanarak cevap üretir ve halüsinasyon riskini minimize eder.
 
 ---
 
-## Temel Hedef
+##  Özellikler
 
- "Enerji verimliliği bilincini artırmak ve sürdürülebilir enerji yönetimini destekleyen akıllı bir bilgi altyapısı oluşturmak."
+-  Çoklu kaynaklı bilgi sistemi (RAG)
+  - Enerji verimliliği eğitim kitabı
+  - Enerji verimliliği mevzuatı
+  - Binalarda enerji performansı yönetmeliği
 
----
-## 🎬 Uygulama Önizlemesi
-![Enerji Verimliliği Chatbot Demo](demo.gif)
-### Canlı Uygulama Linki:https://genaibootcampprojesi-nhh2nty3oesoj9yzhrzqyn.streamlit.app/
-
----
-
-## Ana Özellikler
-
-**Kaynak Temelli Güvenilirlik:**  
-Yanıtlarını yalnızca 1000+ sayfalık *Enerji Verimliliği Eğitim Kitabı* verisinden üretir.
-
-**Uzmanlık Alanları:**  
-- Sürdürülebilir kalkınma, çevre–enerji ilişkisi, ekosistem güvenliği  
-- Yenilenebilir enerji kaynakları (güneş, rüzgâr, hidroelektrik, biyokütle, jeotermal)  
-- Enerji verimliliği uygulamaları (binalarda, sanayide, su ve atık yönetiminde)  
-- İklim değişikliği, karbon emisyonları ve çevresel etkiler konularında özet ve yönlendirici bilgiler sunar  
-
-**Hızlı Bilgi Erişimi:**  
-Enerji etüt raporları, sürdürülebilir kalkınma hedefleri, döngüsel ekonomi ve enerji politikalarına ilişkin bilgilere saniyeler içinde erişim sağlar.  
-
-**Doğrulanabilir Yanıtlar:**  
-Yanıtlarını yalnızca verilen veri setinden üretir; kaynak dışı, doğrulanmamış bilgiler oluşturmaz.  
+-  Google Gemini AI ile akıllı yanıt üretimi
+-  ChromaDB tabanlı semantik arama sistemi
+-  Halüsinasyon azaltılmış, kaynak odaklı cevaplama
+-  Modern ve sade chat arayüzü (Streamlit)
+-  Çoklu dokümandan bağlam oluşturma
 
 ---
 
-## Kimler Kullanabilir
+##  Sistem Nasıl Çalışır?
 
-**Enerji Yöneticileri ve Mühendisler:**  
-Enerji verimliliği, emisyon azaltımı ve sürdürülebilir enerji politikalarıyla ilgili bilgilere hızlı erişmek isteyen profesyoneller.  
+1. Kullanıcı soru sorar  
+2. Sistem soruyla ilgili en alakalı metin parçalarını üç farklı kaynaktan bulur:
+   - Eğitim kitabı
+   - Mevzuat
+   - Bina enerji performansı yönetmeliği  
 
-**Enerji Danışmanlık Şirketleri (ESCO):**  
-Ölçme, doğrulama, enerji etütleri ve yeşil dönüşüm planlarında kaynak tabanlı bilgilerle çalışan ekipler.  
+3. ChromaDB üzerinden en uygun içerikler getirilir (RAG sistemi)  
+4. Google Gemini modeli sadece bu kaynaklara dayanarak cevap üretir  
+5. Eğer yeterli bilgi yoksa sistem:
+   > "Kaynaklarda bulunamadı" yanıtını verir
 
-**Üniversite Öğrencileri ve Akademisyenler:**  
-Enerji verimliliği, sürdürülebilir kalkınma, çevre yönetimi ve iklim değişikliği konularında güvenilir Türkçe kaynaklara dayalı araştırmalar yapmak isteyenler.
+---
 
+##  Kullanılan Veri Kaynakları
+
+Proje aşağıdaki dosyalardan beslenir:
+
+- `Enerji_verimliligi_eğitim_kitabi.txt`
+- `Enerji Verimliliği Mevzuatı.txt`
+- `Binalarda enerji performansı yönetmeliği.txt`
+
+---
+
+## ⚙️ Kurulum
+
+### 1. Projeyi klonla
+```bash
+git clone https://github.com/kullanici/enerji_verimliligi_ai.git
+cd enerji_verimliligi_ai
 ---
 
 ## Kullanılan Teknolojiler
 
-Proje, modern **GenAI** ve **veri işleme** teknolojileri üzerine inşa edilmiştir:
+Proje, modern **GenAI**, **RAG (Retrieval-Augmented Generation)** ve **vektör tabanlı arama** teknolojileri üzerine inşa edilmiştir:
 
 | Bileşen | Görev | Teknoloji |
 |----------|--------|-----------|
-| Model | Akıl yürütme ve içerik üretimi | **Gemini 2.5 Flash** |
-| Vektörleştirme (Embedding) | Metinleri dijital vektörlere dönüştürme | **text-embedding-004** |
-| Veri Deposu | Vektörlerin hızlı aranması | **ChromaDB Vektör Veritabanı** |
-| Arayüz | Etkileşimli web uygulaması | **Streamlit** |
-| Veri Kaynağı | 1000+ sayfalık *Enerji Verimliliği Eğitim Kitabı* | **Enerji_verimliligi_eğitim_kitabi.txt** |
+| Yapay Zekâ Modeli | Soru anlama, bağlamdan cevap üretme ve açıklama | **Google Gemini (Flash modeli)** |
+| Embedding Modeli | Metinleri sayısal vektörlere dönüştürme (semantik arama için) | **text-embedding-004** |
+| Vektör Veritabanı | Benzer içerikleri hızlı şekilde bulma ve indeksleme | **ChromaDB (Persistent Vector Store)** |
+| Web Arayüzü | Kullanıcı ile etkileşimli sohbet arayüzü | **Streamlit** |
+| Veri Kaynağı | Enerji verimliliği ve bina yönetmelikleri içeriği | **Enerji Verimliliği Eğitim Kitabı + Mevzuat + Bina Enerji Performansı Yönetmeliği (.txt)** |
 
 ---
 
@@ -72,13 +74,19 @@ Projenin temel dizin ve dosya yapısı aşağıdaki gibidir:
 
 enerji-verimliligi-ai-chatbot/
 │
-├── app.py                         
-├── data.py                        
-├── Enerji_verimliligi_eğitim_kitabi.txt 
-├── requirements.txt              
-├── .streamlit/                   
-│   └── secrets.toml              
-└── README.md                      
+├── app.py # Streamlit tabanlı kullanıcı arayüzü
+├── data.py # RAG pipeline, veri işleme ve LLM sorguları
+│
+├── Enerji_verimliligi_eğitim_kitabi.txt # Ana bilgi kaynağı (eğitim içeriği)
+├── Enerji Verimliliği Mevzuatı.txt # Mevzuat dokümanı
+├── Binalarda enerji performansı yönetmeliği.txt # Yönetmelik veri kaynağı
+│
+├── requirements.txt # Python bağımlılıkları
+│
+├── .streamlit/ # Streamlit gizli yapılandırma klasörü
+│ └── secrets.toml # API anahtarları (GEMINI_API_KEY)
+│
+└── README.md # Proje dokümantasyonu                     
 
 ---
 
