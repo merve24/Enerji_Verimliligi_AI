@@ -1,3 +1,28 @@
+st.markdown("""
+<style>
+/* Kullanıcı mesajı (sağ) */
+.user-message {
+    background-color: #DCF8C6;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 5px;
+    width: fit-content;
+    margin-left: auto;
+    max-width: 70%;
+}
+
+/* Asistan mesajı (sol) */
+.assistant-message {
+    background-color: #F1F0F0;
+    padding: 10px;
+    border-radius: 12px;
+    margin: 5px;
+    width: fit-content;
+    margin-right: auto;
+    max-width: 70%;
+}
+</style>
+""", unsafe_allow_html=True)
 import streamlit as st
 from data import prepare_rag_data, simple_query_streamlit
 
