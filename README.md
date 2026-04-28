@@ -71,7 +71,7 @@ Proje, modern **GenAI**, **RAG (Retrieval-Augmented Generation)** ve **vektör t
 
 Projenin temel dizin ve dosya yapısı aşağıdaki gibidir:
 
-
+```bash
 enerji-verimliligi-ai-chatbot/
 │
 ├── app.py # Streamlit tabanlı kullanıcı arayüzü
@@ -87,7 +87,7 @@ enerji-verimliligi-ai-chatbot/
 │ └── secrets.toml # API anahtarları (GEMINI_API_KEY)
 │
 └── README.md # Proje dokümantasyonu                     
-
+```
 ---
 
 ## Kurulum ve Çalıştırma Adımları
